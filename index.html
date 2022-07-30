@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="img/icons/food-delivery (6).png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Liefernando</title>
+</head>
+
+<body onload="render()">
+
+    <nav id="#start" class="navbar">
+        <div class="header-logo-container">
+            <img src="img/icons/food-delivery (4).png">
+            <span><b>Liefernando.</b>de</span>
+        </div>
+        <div class="adress-container">
+            <span>Mustermannstraße 45, 45000, Stadt</span>
+        </div>
+        <div class="language-dropdown-container">
+            <div class="language-selector">
+                <img onclick="closeLanguage()" src="img/icons/united-kingdom.png">
+                <div id="lang" class="overlay-lang">
+                    <img onclick="showLanguage()" src="img/icons/germany.png">
+                </div>
+            </div>
+            
+                <div id="dropdown" class="dropdown-menu">
+                    <img onclick="showDropdown()" src="img/icons/list.png">
+                    <div id="overlay" class="overlay">
+                        <a href="attribution.txt" target="_blank">Attribution</a> 
+                        <a href="datenschutz.html"  target="_blank" id="privacy">Datenschutz</a>
+                        <button onclick="closeDropdown()" class="paybutton" id="return">Zurück</button>
+                    </div>
+                </div>
+            
+        </div>
+    </nav>
+    <div class="main-content-wrapper">
+
+        <div class="restaurant-content-container">
+
+            <div class="restaurant-header-wrapper">
+                <div class="restaurant-header-img">
+                    <img src="img/pexels-federica-gioia-11230267.jpg">
+                    <div class="restaurant-logo">
+                        <img src="img/pexels-christopher-farrugia-3581878.jpg">
+                    </div>
+                </div>
+                <div class="restaurant-info">
+                    <h2 id="headline">Ristorante Neon Rosso</h2><br>
+                    <div class="infobar">
+                        <div class="restaurant-rating">
+                            <img src="img/icons/star (1).png">
+                            <img src="img/icons/star (1).png">
+                            <img src="img/icons/star (1).png">
+                            <img src="img/icons/star (1).png">
+                            <img src="img/icons/star (1).png">
+                            <span id="rating">Bewertung</span>
+                        </div>
+                        <div class="delivery-time">
+                            <img src="img/icons/scooter.png">
+                            <span id="deliveryT">Lieferzeit</span>
+                        </div>
+                        <div class="min-amount-ordersum">
+                            <img src="img/icons/shopping-bag.png">
+                            <span id="orderVal">Mindestbestellwert</span>
+                        </div>
+                    </div>
+                    <div class="text-holder">
+                        <span id="info">In unserem Restaurant servieren wir Italienische Klassiker einfach und solide
+                            zubereitet!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="food-category-swiper">
+                <div class="category-container">
+                    <a href="#popular">
+                        <div class="category-box" id="fav">Beliebte Gerichte</div>
+                    </a>
+                    <a href="#antipasti">
+                        <div class="category-box" id="starter">Antipasti-Vorspeisen</div>
+                    </a>
+                    <a href="#pizza">
+                        <div class="category-box">Pizza</div>
+                    </a>
+                    <a href="#pasta">
+                        <div class="category-box">Pasta</div>
+                    </a>
+                    <a href="#salate">
+                        <div class="category-box" id="salad">Salate</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="restaurant-menu-container">
+                <div class="restaurant-menu-wrapper">
+                    <div id="popular" class="menu-header">
+                        <h3 id="favH">Beliebte Gerichte</h3>
+                    </div>
+                    <div id="dish_content">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="basketMain" class="basket-body">
+            <div class="sidebar">
+                <span id="cart">Warenkorb</span>
+            </div>
+            <div id="basket" class="basket">
+
+            </div>
+            <div id="totalsum" class="totalsum">
+
+            </div>
+            <div id="payButton" class="pay-button">
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="basketButton" class="basket-button d-none">
+        <div onclick="showBasketPopup()" id="basketBody" class="basket-button-body">
+
+            
+
+        </div>
+    </div>
+    <div onclick="closePopup()" id="selectGarnish" class="selectGarnish d-none">
+
+
+    </div>
+    <div onclick="closeBasketPopup()" id="basketPopup" class="basket-popup-container d-none">
+        <div class="basket-popup-body" onclick="stopProp(event)">
+            <div class="sidebar">
+                <span id="basketPo">Warenkorb</span>
+            </div>
+            <div id="popupBasket" class="basket">
+
+            </div>
+            <div id="popupTotalsum" class="totalsum">
+
+            </div>
+            <div id="popupPayButton" class="pay-button">
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer-container">
+        <div class="footer-icon"><img src="img/icons/flat.png"></div>
+        <div class="footer-content">
+            <div class="footer-logo-container">
+                <div>
+                    <a href="#start">
+                        <img src="img/icons/food-delivery (7).png">
+                        <span><b>Liefernando.</b>de</span>
+                    </a>
+                </div>
+                <div>© 2022 Can Tükücü</div>
+            </div>
+            <div class="footer-imprint">
+                <a href="attribution.txt" target="_blank">Attribution</a> |
+                <a href="datenschutz.html" target="_blank" id="privacyF">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

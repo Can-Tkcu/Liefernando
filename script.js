@@ -43,13 +43,11 @@ function stopProp(event) {
 function showLanguage() {
     document.getElementById('lang').classList.add('show-overlay-lang');
     document.getElementById('lang').classList.remove('close-overlay-lang');
-    german();
 }
 
 function closeLanguage() {
     document.getElementById('lang').classList.add('close-overlay-lang');
     document.getElementById('lang').classList.remove('show-overlay-lang');
-    english();
 }
 
 function removeEN() {

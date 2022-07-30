@@ -887,6 +887,7 @@ h3 {
         width: 100%;
         border-radius: 10px;
         background-color: white;
+        overflow-y: scroll;
     }
 
     .totalsum {
@@ -899,7 +900,10 @@ h3 {
     }
 
     .paybutton {
-        width: 100%
+        width: 100%;
+    }
+    .pay-button{
+        margin-bottom: 85px;
     }
 }
 

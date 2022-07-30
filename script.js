@@ -178,12 +178,7 @@ function renderBasketButton() {
     } else {
         for (let index = 0; index < basketAmounts.length; index++) {
             basketBody.innerHTML = '';
-            basketBody.innerHTML += /*html*/`
-            <div >
-                <span id="goto">Zum Warenkorb</span>
-                <span><b>${total(subTotal(), deliveryCost)}€</b></span>
-            </div>
-            <div>(${basketAmounts.reduce((currentValue, previousValue) => currentValue + previousValue)})</div>`;
+            basketBody.innerHTML +=  generateBasketButtonHTML();
         }
     } renderPopupBasket(); saveBasket(); loadBasket();
 }
@@ -272,6 +267,15 @@ function total(c, d) {
 
 
 ////////////////////////////////// GENERATED HTML & TEMPLATES //////////////////////////////////////////////////////////////
+
+function generateBasketButtonHTML() {
+    return /*html*/`
+            <div >
+                <span id="goto">Zum Warenkorb</span>
+                <span><b>${total(subTotal(), deliveryCost)}€</b></span>
+            </div>
+            <div>(${basketAmounts.reduce((currentValue, previousValue) => currentValue + previousValue)})</div>`;
+}
 
 
 function generateTotalSum() {
@@ -453,60 +457,6 @@ function salateTemplate() {
                         </div>
                     </div>`;
 }
-
-function english() {
-    if (basketAmounts > 0) {
-        document.getElementById('goto').innerHTML = `Go to Basket`;  
-        document.getElementById('payB').innerHTML = `Proceed to Payment&nbsp;`;
-    }
-    document.getElementById('fill').innerHTML = `Fill your Basket`;
-    document.getElementById('fillB').innerHTML = `Fill your Basket`;
-    document.getElementById('privacy').innerHTML = `Privacy Policy`;
-    document.getElementById('privacyF').innerHTML = `Privacy Policy`;
-    document.getElementById('headline').innerHTML = `Restaurant Red Neon`;
-    document.getElementById('return').innerHTML = `Back`;
-    document.getElementById('rating').innerHTML = `Rating`;
-    document.getElementById('deliveryT').innerHTML = `Delivery Time`;
-    document.getElementById('orderVal').innerHTML = `min. Order Value`;
-    document.getElementById('info').innerHTML = `In our restaurant we serve classic Italian cuisine  prepared simply and grounded in tradition`;
-    document.getElementById('fav').innerHTML = `Favourites`;
-    document.getElementById('starter').innerHTML = `Antipasti - Starters`;
-    document.getElementById('starterT').innerHTML = `Antipasti - Starters`;
-    document.getElementById('salad').innerHTML = `Salad`;
-    document.getElementById('saladT').innerHTML = `Salad`;
-    document.getElementById('favH').innerHTML = `Favourites`;
-    document.getElementById('basketPo').innerHTML = `Shopping Cart`;
-    document.getElementById('cart').innerHTML = `Shopping Cart`;
-    document.getElementById('empty').innerHTML = `Add a couple of delishous dishes from the menu to your basket and order your food.`;
-
-}
-
-function german() {
-    if (basketAmounts > 0) {
-        document.getElementById('goto').innerHTML = `Zum Warenkorb`;   /*Wtf?*/
-        document.getElementById('payB').innerHTML = `Zum Bezahlvorgang&nbsp;`;
-    }
-    document.getElementById('fill').innerHTML = `Fülle deinen Warenkorb`;
-    document.getElementById('fillB').innerHTML = `Fülle deinen Warenkorb`;
-    document.getElementById('privacy').innerHTML = `Datenschutz`;
-    document.getElementById('privacyF').innerHTML = `Datenschutz`;
-    document.getElementById('headline').innerHTML = `Restaurant Neon Rosso`;
-    document.getElementById('return').innerHTML = `Zurück`;
-    document.getElementById('rating').innerHTML = `Bewertung`;
-    document.getElementById('deliveryT').innerHTML = `Lieferzeit`;
-    document.getElementById('orderVal').innerHTML = `Mindestbestellwert`;
-    document.getElementById('info').innerHTML = `In unserem Restaurant servieren wir Italienische Klassiker einfach und solide zubereitet!`;
-    document.getElementById('fav').innerHTML = `Beliebte Gerichte`;
-    document.getElementById('starter').innerHTML = `Antipasti - Vorspeisen`;
-    document.getElementById('starterT').innerHTML = `Antipasti - Vorspeisen`;
-    document.getElementById('salad').innerHTML = `Salat`;
-    document.getElementById('saladT').innerHTML = `Salat`;
-    document.getElementById('favH').innerHTML = `Beliebte Gerichte`;
-    document.getElementById('basketPo').innerHTML = `Warenkorb`;
-    document.getElementById('cart').innerHTML = `Warenkorb`;
-    document.getElementById('empty').innerHTML = `Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.`;
-}
-
 
 ////////////////////////////////// SAVE & LOAD //////////////////////////////////////////////////////////////////////////////
 
